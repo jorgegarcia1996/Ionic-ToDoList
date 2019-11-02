@@ -1,0 +1,28 @@
+<ion-header padding>
+  <ion-toolbar>
+    <ion-title>
+      Lista de Tares
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)='goEdit()'>
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list lines="full">
+    <ion-item *ngFor='let t of tasks'>
+      <ion-label>{{ t.title }}</ion-label>
+      <ion-buttons slot="end">
+        <ion-button (click)='goEdit(t.id)'>
+          <ion-icon slot="icon-only" name="create" color="warning"></ion-icon>
+        </ion-button>
+        <ion-button (click)='alertDelete(t.id, t.title)'>
+          <ion-icon slot="icon-only" name="trash" color="danger"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>

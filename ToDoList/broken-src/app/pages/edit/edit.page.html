@@ -1,0 +1,26 @@
+<ion-header padding>
+  <ion-toolbar>
+    <ion-title>Editar tarea</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='home'>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color='success' (click)='saveTask()'>
+        <ion-icon slot="icon-only" name="save"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label position='stacked'>Titulo</ion-label>
+    <ion-input clearInput [(ngModel)]='task.title'></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position='stacked'>Descripción</ion-label>
+    <ion-textarea clearOnEdit="true" [(ngModel)]='task.description'></ion-textarea>
+  </ion-item>
+
+</ion-content>
